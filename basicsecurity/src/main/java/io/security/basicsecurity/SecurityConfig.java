@@ -81,5 +81,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .userDetailsService(userDetailsService);
 //                .deleteCookies("remember-me");
 
+        http.sessionManagement()
+                .maximumSessions(1) // 동시 로그인 허용 세션 수
+                .maxSessionsPreventsLogin(false) // 동시 로그인 차단, flase: 기존 세션 만료(Default)
+                .expiredUrl("/"); // 세션 만료시 이동할 페이지
     }
 }
