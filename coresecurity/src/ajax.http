@@ -1,0 +1,28 @@
+### Send POST with request-header  1. api/login이라는 조건  2. X-Requested-With: XMLHttpRequest 조건 두개를 체크
+POST http://localhost:8080/api/login
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+  "username": "user",
+  "password": "123"
+}
+
+###
+
+### 권한체크
+POST http://localhost:8080/api/login
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+  "username": "manager",
+  "password": "123"
+}
+
+### Send POST request with body as parameters
+GET http://localhost:8080/api/messages
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+###
